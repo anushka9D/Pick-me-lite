@@ -1,0 +1,326 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  :root {
+    --primary-color: #ff6b6b;
+    --secondary-color: #ff9f43;
+    --text-color: #2d3436;
+  }
+  
+  body {
+    background-color: #f5f6fa;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Header Styles */
+  .header {
+    background-color: #fff;
+    padding: 1rem 5%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+  
+  .nav-links a:hover {
+    color: var(--primary-color);
+  }
+  
+  .order-btn {
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: transform 0.3s;
+  }
+  
+  .order-btn:hover {
+    transform: translateY(-2px);
+  }
+  
+  /* Hero Section */
+  .hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding: 0 5%;
+    margin-top: 60px;
+  }
+  
+  .hero-content {
+    max-width: 600px;
+    color: white;
+  }
+  
+  .hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  
+  /* Categories Section */
+  .join-categories {
+    padding: 5rem 5%;
+  }
+  
+  .section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  
+  .join-categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+  
+  .join-category-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.3s;
+    cursor: pointer;
+  }
+  
+  .join-category-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .join-category-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+  }
+
+  .join-category-link {
+    text-decoration: none;
+    color: var(--text-color);
+  }
+  
+  
+  /* Mobile view */
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none; /* Hide the navigation links by default */
+      flex-direction: column;
+      gap: 1rem;
+      position: absolute;
+      top: 60px;
+      right: 5%;
+      background-color: white;
+      padding: 1rem;
+      border-radius: 8px;
+      width: 200px;
+    }
+
+    .nav-links.active {
+        display: flex; /* Show when active */
+      }
+  
+    .nav-links a {
+      font-size: 1.2rem;
+      color: var(--text-color);
+    }
+  
+    .hamburger {
+      display: block;
+      cursor: pointer;
+    }
+  
+    .hamburger i {
+      font-size: 2rem;
+      color: var(--text-color);
+    }
+  }
+  
+  /* Desktop view */
+  @media (min-width: 769px) {
+    .hamburger {
+      display: none;
+    }
+  }
+
+  /* Categories Section */
+
+.categories {
+  padding: 5rem 5%;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    justify-items: center;
+}
+
+.category-card {
+    width: clamp(180px, 20vw, 220px);
+    height: clamp(180px, 20vw, 220px);
+    border-radius: 50%;
+    padding: 1rem;
+    background: linear-gradient(145deg, #ffffff, #f8f9fa);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+.category-card i {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.category-card h3 {
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+    color: #333;
+}
+
+.category-card p {
+    font-size: 0.75rem;
+    color: #666;
+    line-height: 1.2;
+    padding: 0 0.5rem;
+}
+
+/* Responsive Grid Adjustments */
+@media (max-width: 768px) {
+    .categories-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .categories-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+  /*footer section */
+
+  .footer-container {
+    background: #333;
+    color: white;
+    padding: 40px 20px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+    margin-bottom: 20px;
+}
+
+.footer-contact-number {
+    color: #c49b63;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.contact-info p {
+    margin: 8px 0;
+}
+
+.food-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+}
+
+.app-badges {
+    display: flex;
+    gap: 2.5rem;
+    margin-top: 20px;  
+    font-size: 1.9rem;
+}
+
+.app-badges a {
+  text-decoration: none;
+  color: #f5f6fa;
+}
+
+.copyright {
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid #555;
+    margin-top: 30px;
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+    }
+    
+    .footer-section {
+        flex: none;
+        width: 100%;
+    }
+}
+  
